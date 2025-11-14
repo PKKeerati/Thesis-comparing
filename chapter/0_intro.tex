@@ -1,0 +1,61 @@
+\chapter{Introductions, Motivations and Outlines}
+\label{ch:1}
+
+
+\section{Introductions and Motivations}
+\label{sec:1.1}
+
+Functional materials, characterised by their critical roles in electronic, thermal, and optoelectronic devices, often present significant challenges for atomistic modelling due to their intrinsic complexity. Accurately characterising the vibrational properties of crystalline inorganic materials requires the consideration of subtle anharmonic effects, which are computationally demanding when employing conventional methods. Meanwhile, organic semiconductors complicate modelling endeavours because electronic transport properties are highly sensitive to molecular orientation and intermolecular interactions. Traditional modelling techniques, including density functional theory (DFT) and semi-empirical methods, although effective, frequently become computationally unfeasible or insufficiently accurate for large-scale or complex molecular systems.
+
+Physically informed machine learning (ML) has arisen as an effective approach to address these challenges. This thesis examines two principal methodologies within this framework: Gaussian Process (GP) regression and Atomic Cluster Expansion (ACE).  Gaussian processes are Bayesian machine learning methods that can model intricate, nonlinear functional relationships from data, offer inherent uncertainty quantification, and effortlessly integrate derivative observations like atomic forces \cite{RasmussenW06, Bartk2015, Bartk2017}.  In contrast, ACE systematically develops rotationally invariant and symmetry-compliant representations of atomic environments \cite{Drautz2019, Dusson2022}.  Collectively, these methodologies form a comprehensive framework for simulating the complex behaviours of functional materials.
+
+\subsection{Gaussian Process Force Constants for Lattice Dynamics}
+
+The mechanical and thermal properties of crystalline materials are fundamentally determined by their potential energy surfaces (PESs).  Conventional methods for modelling vibrational properties, like the finite-displacement method (FDM), generally depend on a Taylor expansion of the potential energy surface (PES) near equilibrium positions.  This method effectively captures harmonic interactions in simple systems; however, its computational complexity increases prohibitively with larger system sizes and higher-order anharmonic interactions.  The precise calculation of third-order (anharmonic) force constants, crucial for forecasting finite phonon lifetimes and realistic thermal conductivities, continues to be computationally prohibitive.
+
+Gaussian process regression provides an effective solution owing to its intrinsic differentiability and probabilistic structure.  Gaussian processes facilitate concurrent training on energies, atomic forces, and higher-order derivatives of the potential energy surface, thereby enabling the efficient extraction of both harmonic and anharmonic force constants via analytical and automatic differentiation \cite{Solak2002, Dai2020}.  Prior GP applications have effectively modelled molecular potential energy surfaces for diverse small systems, including H$_3$O$^+$, N$_4$, and protonated imidazole dimers, in addition to bulk crystalline materials like elemental silicon \cite{Handley2009, Cui2016, Sugisawa2020, Bartk2018}.  These studies utilised advanced kernel engineering and dimensionality-reduction techniques to address the scalability challenges associated with GP models.
+
+Recent research has shown that Gaussian Process models trained on energies and forces calculated via density functional theory (DFT) can accurately predict both second- and third-order force constants. \cite{https://doi.org/10.48550/arxiv.2405.05113}.  The Gaussian Process Force Constant (GPFC) methodology decreases the requisite number of ab initio calculations by an order of magnitude relative to traditional finite difference methods, particularly when utilising phonon-coordinate descriptors.  We present a comprehensive framework for higher-derivative Gaussian process models, employing both Cartesian and phonon-based descriptors.  Our models facilitate efficient and precise predictions of phonon dispersions, lifetimes, and lattice thermal conductivities. Therefore, they offer a feasible computational alternative for investigating complex, anharmonic lattice dynamics in crystalline materials.
+
+\subsection{Machine Learning for Charge Transfer Integrals}
+
+Meanwhile, charge transport in organic and molecular materials is fundamentally reliant on intermolecular electronic couplings, referred to as charge transfer integrals.  These transfer integrals determine the hopping rates of charge carriers and demonstrate significant sensitivity to molecular orientation and interatomic distance.  The precise computation of these integrals generally necessitates resource-intensive wavefunction-based quantum chemical techniques, rendering it impractical for systems marked by significant structural disorder.
+
+Machine learning methodologies provide effective solutions for predicting transfer integrals based on restricted quantum chemical information.  Initial applications utilised Gaussian processes alongside geometric descriptors to effectively forecast integrals in crystalline molecular systems, including pentacene \cite{Lederer2018}.  Recent developments have employed advanced descriptors like Coulomb matrices and deep learning techniques, including neural networks, to improve accuracy and generalisability in amorphous and chemically varied systems \cite{Wang2019}.  Nonetheless, these prior methodologies often depend on heuristically selected descriptors, constraining their transferability and general applicability.
+
+This thesis employs the Atomic Cluster Expansion (ACE) as a systematic and invariant approach to characterise molecular environments, thereby addressing these limitations.  Training machine learning models to predict the logarithm of squared transfer integrals using ACE descriptors effectively captures fundamental physical trends while maintaining numerical stability.  We employ this methodology on a range of chemically diverse molecular dimers, such as naphthalene, thiophene, ethylene, and their fluorinated derivatives, showcasing exceptional predictive accuracy and robustness in both coarse-grained and atomistic representations.
+
+\vspace{1em}
+Together, these two research strands offer a unified methodology for modelling vibrational and electronic phenomena in functional materials.  This thesis enhances computational methods by integrating quantum mechanical data, physically informed descriptors, and differentiable machine learning models, thereby facilitating the systematic exploration and rational design of next-generation functional materials beyond conventional constraints.
+
+%Atomistic modelling of functional materials, whose characteristics are actively utilised in electronic, thermal, and optoelectronic devices, is extremely difficult, especially when disorder is a fundamental component of the material's structure or operation.  The application of common tools based on periodicity and translational invariance is hampered by the loss of long-range symmetry, which is a fundamental component of conventional solid-state physics.  Machine learning (ML) techniques that can adaptably capture the complexity of disordered systems while staying rooted in physical principles are becoming more and more popular as a solution to this problem.
+
+%This thesis develops and applies physically informed machine learning models to simulate and understand disordered functional materials. Central to this work are Gaussian Process (GP) regression and the Atomic Cluster Expansion (ACE) framework. GP models provide a Bayesian approach to surrogate modeling of potential energy surfaces and force constants, with built-in uncertainty quantification and the ability to incorporate derivative information such as atomic forces \cite{rasmussen2006gaussian, bartok2015gaussian, chmiela2017machine}. ACE, on the other hand, offers a complete and systematically improvable representation of atomic environments that respects the fundamental symmetries of the physical system \cite{drautz2019atomic, dusson2022atomic}.
+
+%We use higher-derivative GP models in the first section of this thesis to learn harmonic and cubic anharmonic force constants from DFT data \cite{gonze1997dynamical, tadano2015self}.  Beyond the harmonic approximation, these models allow for precise and effective predictions of phonon dispersion, lifetimes, and thermal conductivities \cite{esfarjani2011method}.  In the second section, we use symmetry-preserving descriptors and machine learning regression to extend the ACE framework to predict charge transfer integrals in molecular dimers, which are quantities essential to charge transport in organic semiconductors \cite{fratini2020theory, stauber2021intermolecular}.
+
+%This thesis offers a unified framework for modelling vibrational and electronic phenomena in disordered materials by fusing contemporary machine learning tools with quantum mechanical computations.  The method provides new avenues for logical design of complex functional materials and predictive simulation.
+
+\section{Thesis Outline}
+\label{sec:1.2}
+ 
+\subsection*{Outline of the thesis}
+
+The thesis consists of three primary chapters, each examining distinct facets of employing physically informed machine learning to comprehend and forecast the behaviour of functional materials.
+
+In Chapter \ref{ch:2}, I lay the theoretical groundwork essential for our ensuing discussions.  The chapter commences with an introduction to lattice dynamics, encompassing both harmonic and anharmonic phonon theories, and elucidates the application of methods such as density functional theory (DFT) and finite-difference techniques for the computation of lattice force constants.  I subsequently present a comprehensive introduction to Gaussian Processes (GP), emphasising their enhanced derivative capabilities for learning from atomic forces and energies.  Additionally, we examine inductive biases in machine learning models, highlighting equivariant descriptors, specifically the Atomic Cluster Expansion (ACE), and conclude with an analysis of the theory and importance of charge transfer integrals in organic semiconductors.
+
+ In Chapter \ref{ch:3}, we establish and implement our higher-derivative Gaussian Process framework (GPFC.jl), intended to effectively acquire harmonic and cubic anharmonic force constants directly from ab initio data. We illustrate the proficiency of GP models in precisely forecasting thermal conductivity, phonon lifetimes, and dispersion relations. Subsequently, we provide a comprehensive comparison of descriptor options—specifically phonon-based and Cartesian descriptors—and examine how the incorporation of ACE descriptors could further improve our model's accuracy and efficiency.  Furthermore, we examine prospective methodological enhancements and extensive active learning strategies.
+
+Chapter \ref{ch:4} provides the extension of our ACE methodology to accurately and efficiently predict charge transfer integrals in molecular dimers typically present in organic semiconductor materials.  We evaluate both coarse-grained and atom-resolved ACE representations by examining various molecular dimers, including naphthalene, thiophene, ethylene, and fluorinated derivatives.  Our analysis specifically emphasises the development of descriptors that enable our models to generalise effectively across various chemical systems, explicitly addressing the sensitivity of transfer integrals to molecular orientation and distance.
+
+In Chapter \ref{ch:5}, I summarise the key contributions and insights obtained from our research.  I provide the comprehensive implications of incorporating physical insights with machine learning models and propose directions for future research. These future directions consist of the development of more sophisticated descriptors, the explicit incorporation of electronic correlation effects, and the enhancement of our models to explore real-time dynamics and non-equilibrium processes.
+
+
+
+
+
+
+
+
+

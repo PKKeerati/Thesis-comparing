@@ -1,0 +1,54 @@
+% -------------  List of Symbols -------------
+\thispagestyle{plain}
+\phantomsection
+\section*{\Huge List of Symbols}% or \section*
+\addcontentsline{toc}{chapter}{List of Symbols}
+
+\begin{center}
+\begin{tabular}{p{2.2cm} p{8.5cm} p{2.cm}}
+Symbol & Meaning (brief description) & Units \\
+\midrule\midrule
+$a,\,b$               & Molecular sites (donor / acceptor) & -- \\
+$\alpha,\beta,\gamma$ & Cartesian coordinate directions ($x,y,z$) & -- \\
+$\kappa$              & Atom index inside a unit cell              & -- \\
+$l$                   & Unit-cell index                            & -- \\
+$\mathbf{R}^{0}_{l\kappa}$ & Equilibrium position of atom $\kappa$ in cell $l$ & Å \\
+$u^{\alpha}_{l\kappa}$ & Displacement of atom $\kappa$ ($\alpha$ component) & Å \\
+$\Phi^{(n)}$          & $n$-th order lattice force-constant tensor & eV Å$^{-n}$ \\
+$D_{\alpha\beta,\kappa\kappa'}(\mathbf{q})$ & Dynamical matrix element & eV amu$^{-1}$ \\
+$\mathbf{q}$          & Phonon wave-vector in the Brillouin zone   & rad Å$^{-1}$ \\
+$\omega_{j}(\mathbf{q})$ & Phonon angular frequency (branch $j$) & rad s$^{-1}$ \\
+$\epsilon^{\alpha}_{\kappa j}(\mathbf{q})$ & Phonon polarisation vector & -- \\
+$n_{j}(\mathbf{q})$   & Bose–Einstein occupation number           & -- \\
+$k_{\mathrm B}$       & Boltzmann constant                        & eV K$^{-1}$ \\
+$\hbar$               & Reduced Planck constant                   & eV s \\
+$C_V$                 & Isochoric heat capacity                   & eV K$^{-1}$ \\
+$\tau_{j}(\mathbf{q})$ & Phonon lifetime                           & ps \\
+$J_{ab}$              & Electronic transfer integral (coupling) between sites $a,b$ & eV \\
+$\varepsilon_{a}$     & Site (diabatic) energy on molecule $a$     & eV \\
+$S_{ab}$              & Orbital overlap integral $\langle\psi_a|\psi_b\rangle$ & -- \\
+$k$                   & Charge-transfer rate (Marcus theory)       & s$^{-1}$ \\
+$\lambda$             & Reorganisation energy                     & eV \\
+$\Delta G$            & Gibbs free-energy change                  & eV \\
+$T$                   & Finite temperature                      & K \\
+\bottomrule
+\end{tabular}
+\end{center}
+\newpage
+\begin{center}
+\begin{tabular}{p{2.2cm} p{8.5cm} p{2.cm}}
+Symbol & Meaning (brief description) & Units \\
+\midrule\midrule
+$k(\mathbf{x},\mathbf{x}^\ast)$ & Gaussian-process kernel function  & -- \\
+$\sigma_{o}$          & GP kernel output scale                    & (var) \\
+$\ell$                & GP kernel length scale                    & Å \\
+$\mathbf{x}$          & Atomic-environment descriptor (Cartesian) & Å \\
+$y(r_{ij})$           & Agnesi radial transform used in ACE        & -- \\
+$B_{nlm}$             & ACE basis function of order $(n,l,m)$      & -- \\
+\bottomrule
+\end{tabular}
+\end{center}
+\newpage
+% Print the nomenclature list (if you prefer nomencl)
+%\printnomenclature
+% ----------------------------------------------
