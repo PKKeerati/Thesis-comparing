@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt, doublespacing]{book}
+\usepackage[left=3.5cm, right=3.5cm]{geometry}
+\usepackage{setspace}
+%draft can be a useful option for quick compile
+\usepackage{tocloft}
+
+\input{chapter/preamble}
+
+\makeindex
+\cftpagenumbersoff{chapter}
+\begin{document}
+\setcitestyle{square}
+
+
+% =============================================================================
+	\frontmatter
+        
+	\input{chapter/titlepage}
+        
+% =============================================================================
+	\mainmatter
+	\renewcommand{\baselinestretch}{1.1}
+        %\renewcommand{\baselinestretch}{1.05}
+	\small\normalsize
+	\scalefont{1.08}
+
+	\input{chapter/0_intro}
+	\input{chapter/1_theory}
+	\input{chapter/2_Pro1}
+	\input{chapter/3_Pro2}
+	\input{chapter/4_conclusions}
+
+	\appendix 
+	\include{appendix/charts}
+	%\include{appendix/lists}
+        %\include{appendix/GANTT}
+	\include{appendix/bib}
+        %\include{appendix/ESAform}
+
+% =============================================================================
+%	\backmatter
+
+
+\newpage
+        \thispagestyle{empty}
+        \begin{center}
+	\vspace*{5em}
+	\huge\textbf{Declaration of Academic Integrity}\\
+        \end{center}
+        \vspace{2em}
+            I hereby declare that I have written the present work myself and did not use any sources
+            or tools other than the ones indicated.
+
+        \vspace{4em}
+        \begin{minipage}{\linewidth}
+	\centering
+	\begin{tabular}{p{11.5em}C{20em}}
+            & \includegraphics[width=0.5\linewidth]{logos/sign.jpg}\\
+		Date: 24 04 2025&  ........Keerati...Keeratikarn........\\
+		& \centering (Signature)\\
+	\end{tabular}
+        \end{minipage}
+
+\end{document}
+
+         

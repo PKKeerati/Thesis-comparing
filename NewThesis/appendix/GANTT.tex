@@ -1,0 +1,59 @@
+\chapter{PhD Research Plan}
+%\section{Gantt}
+The Gantt chart shows a proposed plan for my PhD. This plan is divided into three parts. The first part is doing and understanding the relevant theory of solid state physics and machine learning (Red bars). Doing computation and coding are the second part indicated by yellow. The third part is academic writing during my PhD (green bars). Dashed purple and solid orange lines correspond to scholarship reports and PhD deadlines, respectively.
+\begin{center}
+\begin{ganttchart}
+    [
+    hgrid=true,
+    vgrid={*{5}{black, dotted},*{1}{black},*{7}{black, dotted},*{1}{black},*{7}{black, dotted},*{1}{black}},
+    title/.style={fill=bEpic, draw=none},
+    title label font=\color{white}\bfseries,
+    title left shift=.1,
+    title right shift=-.1,
+    title top shift=.05,
+    title height=.75,
+    vrule/.style={thick, oEpic},
+    vrule label font=\bfseries\footnotesize
+    ]{1}{22}
+  \gantttitle{Year 2}{6}\gantttitle{Year 3}{8}\gantttitle{Year 4}{8}\\
+  \gantttitle{Q2}{2}\gantttitle{Q3}{2}\gantttitle{Q4}{2}
+  \gantttitle{Q1}{2}\gantttitle{Q2}{2}\gantttitle{Q3}{2}\gantttitle{Q4}{2}
+  \gantttitle{Q1}{2}\gantttitle{Q2}{2}\gantttitle{Q3}{2}\gantttitle{Q4}{2}\\
+ 
+  \ganttgroup[group/.append style={fill=rEpic}]{Theory}{1}{22} \\
+  
+  \ganttbar[bar/.append style={fill=rEpic}]{GP}{1}{3}\\
+  \ganttbar[bar/.append style={fill=rEpic}]{SO(3) irreps}{4}{6}\\
+  \ganttbar[bar/.append style={fill=rEpic}]{\texttt{SOAP, ACE}}{7}{8}\\
+  \ganttbar[bar/.append style={fill=rEpic}]{Rep theory}{9}{16}\\
+  
+  \ganttgroup[group/.append style={fill=yEpic}]{Coding}{1}{22} \\
+  \ganttbar[bar/.append style={fill=yEpic}]{\texttt{GPFC.jl}}{3}{7}\\
+  \ganttbar[bar/.append style={fill=yEpic}]{MLFF}{9}{13}\\
+  \ganttbar[bar/.append style={fill=yEpic}]{ML TI.}{13}{17}\\
+  
+  \ganttgroup[group/.append style={fill=gEpic}]{Writing}{1}{22} \\
+  \ganttbar[bar/.append style={fill=gEpic}]{LSR}{5}{6}\\
+  \ganttbar[bar/.append style={fill=gEpic}]{$1^{\text{st}}$ paper}{5}{8}\\
+  \ganttbar[bar/.append style={fill=gEpic}]{$2^{\text{nd}}$ paper}{15}{18}\\
+  \ganttbar[bar/.append style={fill=gEpic}]{Thesis}{17}{22}\\
+
+  \ganttgroup[group/.append style={fill=oEpic}]{Conference}{1}{22} \\
+  \ganttbar[bar/.append style={fill=oEpic}]{APS March}{3}{3}\\
+  \ganttbar[bar/.append style={fill=oEpic}]{MRS}{6}{6}\\
+    
+  \ganttbar[bar/.append style={fill=pEpic}]{Future works}{11}{20}\\
+  \ganttbar[bar/.append style={fill=vEpic}]{Postdoc.}{15}{22}\\
+  
+  \ganttvrule[vrule offset=1.33]{ESA}{0}
+  \ganttvrule{LSR}{6}
+  \ganttvrule[vrule offset=1.33]{TPR}{10}
+  \ganttvrule{TPR}{18}
+  \ganttvrule{TS}{22}
+  \ganttvrule[vrule/.append style={vEpic,dashed},vrule offset=.66]{Dec}{3}
+  \ganttvrule[vrule/.append style={vEpic,dashed},vrule offset=.66]{}{7}
+  \ganttvrule[vrule/.append style={vEpic,dashed},vrule offset=.66]{}{11}
+  \ganttvrule[vrule/.append style={vEpic,dashed},vrule offset=.66]{Jun}{15}
+  \ganttvrule[vrule/.append style={vEpic,dashed},vrule offset=.66]{}{19}
+\end{ganttchart}
+\end{center}
