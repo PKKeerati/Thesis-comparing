@@ -39,7 +39,7 @@ In our implementation, we mainly use the square exponential (radial basis functi
         \end{split}
 \end{equation}
 where $d(\mathbf{x},\;\mathbf{x}^{*})=\lVert\mathbf{x}-\mathbf{x}^{*}\rVert^{2}_{2}$ is the Euclidean metric.
-The kernel scale $\sigma_{o}$ and the length scale $\ell$ can be obtained from t hyperparameter optimisation.
+The kernel scale $\sigma_{o}$ and the length scale $\ell$ can be obtained from the hyperparameter optimisation.
 
 The SE kernel was chosen because it assumes a smooth, infinitely differentiable latent function. This is physically well-motivated for electronic-structure-related quantities like potential energies that change smoothly with small changes in geometry. 
 Its isotropic form also provides a straightforward way to encode geometric similarity without introducing additional directional parameters, making it computationally efficient and numerically stable during training.

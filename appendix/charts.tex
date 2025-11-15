@@ -88,7 +88,7 @@ where $\mathbb{1}$ is a $(d\times d)$ identity matrix.
     \caption{
         \label{fig:A.1}
         Construction of the derivative kernel (covariance) matrix used in our GP model.
-        Each block $(m,n)$ represents the $(m+n)$th-order kernel derivative $(\nabla_{\mathbf{x}})^{m} (\nabla_{\mathbf{x}^*})^{m} k(\mathbf{x}, \mathbf{x}^*)$ which behaves as a rank-$(m+n)$ tensor. For all $\mathbf{x},\;\mathbf{x}^*\in\mathbb{R}^{d}$,this tensor is reshaped into a $(d^{m}\times d^{n})$-matrix to construct the whole covariance matrix. 
+        %Each block $(m,n)$ represents the $(m+n)$th-order kernel derivative $(\nabla_{\mathbf{x}})^{m} (\nabla_{\mathbf{x}^*})^{m} k(\mathbf{x}, \mathbf{x}^*)$ which behaves as a rank-$(m+n)$ tensor. For all $\mathbf{x},\;\mathbf{x}^*\in\mathbb{R}^{d}$,this tensor is reshaped into a $(d^{m}\times d^{n})$-matrix to construct the whole covariance matrix. 
     }
 \end{figure*}
 Similarly, the mixed partial derivative of the squared exponential kernel with respect to $\mathbf{x}$ and $\mathbf{x}^*$ is expressed as
@@ -568,7 +568,7 @@ To further evaluate the convergence of our Gaussian Process (GP) model, we prese
 \end{subfigure}
 \caption{
     \label{fig:A.4}
-    Panels (a), (b) and (c) show the phonon band structures and density of states for \textbf{NaCl}, \textbf{GaAs} and \textbf{CdTe}, respectively. Solid green lines represent results computed using FC2 values from \textsc{Phonopy} (FDM), while dashed red lines correspond to results from our GPFC2 predictions.
+    Panels (a), (b) and (c) show the phonon band structures and density of states for \textbf{NaCl}, \textbf{GaAs} and \textbf{CdTe}, respectively. %Solid green lines represent results computed using FC2 values from \textsc{Phonopy} (FDM), while dashed red lines correspond to results from our GPFC2 predictions.
 }
 \end{figure*}
 Here, I first present the phonon dispersion relations and phonon density of states for \textbf{NaCl}, \textbf{GaAs}, and \textbf{CdTe}, as shown in Fig.~\ref{fig:A.4}. The dashed red lines indicate the results obtained using Gaussian Process-predicted harmonic force constants (GPFC2), while the solid green lines represent the reference results computed using second-order force constants (FC2) derived from the finite displacement method (FDM) as implemented in \textsc{Phonopy}. 
@@ -599,7 +599,7 @@ Wasserstein's distance is here employed to measure the dissimilarity of two phon
 \end{subfigure}
 \caption{
     \label{fig:A.5}
-    Figures (a), (b), and (c) present the predicted phonon lifetimes at 300~K for \textbf{NaCl}, \textbf{GaAs}, and \textbf{CdTe}, respectively.  Green point clouds result from cubic anharmonic force constants calculated with \textsc{Phono3py} using finite difference methods, whereas red point clouds are predicted based on GPFC3.
+    Figures (a), (b), and (c) present the predicted phonon lifetimes at 300~K for \textbf{NaCl}, \textbf{GaAs}, and \textbf{CdTe}, respectively.  %Green point clouds result from cubic anharmonic force constants calculated with \textsc{Phono3py} using finite difference methods, whereas red point clouds are predicted based on GPFC3.
 }
 \end{figure*}
 We examine the phonon lifetime and lattice thermal conductivity of \textbf{NaCl}, \textbf{GaAs}, and \textbf{CdTe} at finite temperatures ranging from $300$ to $1200$~K.
@@ -629,7 +629,7 @@ The mean absolute errors of the lattice thermal conductivity, computed using the
 \end{subfigure}
 \caption{
     \label{fig:A.6}
-    Figures (a), (b), and (c) illustrate the lattice thermal conductivities of these materials across the temperature range of 300~K to 1200~K.  The green and red lines represent results derived from cubic anharmonic force constants calculated with \textsc{Phono3py} using finite difference method (FDM) and predictions based on GPFC3, respectively.
+    Figures (a), (b), and (c) illustrate the lattice thermal conductivities of these materials across the temperature range of 300~K to 1200~K.  %The green and red lines represent results derived from cubic anharmonic force constants calculated with \textsc{Phono3py} using finite difference method (FDM) and predictions based on GPFC3, respectively.
 }
 \end{figure*}
 
@@ -647,8 +647,9 @@ The mean absolute errors of the lattice thermal conductivity, computed using the
   \caption{}
 \end{subfigure}
 \caption{\label{fig:A.7}Learning curves showing violations of the acoustic sum rule for GP-predicted force constants (GPFCs) across various materials. 
-    (a) Translational symmetry violations in GPFC2, quantified by the total magnitude of the residuals in Eq.~\eqref{equ:A.2.3.1}, as a function of the number of training points. Solid lines represent predictions based on Cartesian descriptors, while dashed lines correspond to those based on phonon descriptors. 
-    (b) Translational symmetry violations in GPFC3, computed from the residuals in Eq.~\eqref{equ:A.2.3.2}, using phonon-based descriptors. All quantities are plotted on a logarithmic scale. Results are shown for d-\textbf{Si}, \textbf{GaAs}, \textbf{CdTe}, \textbf{NaCl}, and \textbf{PbTe}. Vertical dashed lines indicate representative training set sizes used for comparison.}
+    (a) Translational symmetry violations in GPFC2, quantified by the total magnitude of the residuals in Eq.~\eqref{equ:A.2.3.1}, as a function of the number of training points. %Solid lines represent predictions based on Cartesian descriptors, while dashed lines correspond to those based on phonon descriptors. 
+    (b) Translational symmetry violations in GPFC3, computed from the residuals in Eq.~\eqref{equ:A.2.3.2}, using phonon-based descriptors. %All quantities are plotted on a logarithmic scale. Results are shown for d-\textbf{Si}, \textbf{GaAs}, \textbf{CdTe}, \textbf{NaCl}, and \textbf{PbTe}. Vertical dashed lines indicate representative training set sizes used for comparison.
+    }
 \end{figure*}
 The acoustic sum rule \cite{Keating1969, Shindo1977,Eriksson2019} is a physical constraint that indicates whether the harmonic (second-order, FC2) and cubic anharmonic (third-order, FC3) force constants satisfy translational symmetry. The sumrule for FC2 is defined as
 \begin{equation} \label{equ:A.2.3.1} \sum_{\kappa'}\Phi^{(2)}{\alpha \kappa,\beta \kappa'} = 0, \end{equation}
@@ -675,7 +676,7 @@ The choice of supercell size directly determines the maximum allowable cutoff di
   \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Figure/Appendix/GPFC/pBandDOS/Pband.jpg}
 \caption{
     \label{fig:A.8}
-    Figure shows the phonon band structures and density of states for d-\textbf{Si}. Solid green lines represent results computed using FC2 values from \textsc{Phonopy} (FDM), while dashed red lines correspond to results from our GPFC2 predictions. Solid, dashdot, dashed blue lines depect phonon results from \textsc{HiPhive} FC2 of $2\times2\times2$, $3\times3\times3$, and $4\times4\times4$ supercell structures
+    Figure shows the phonon band structures and density of states for d-\textbf{Si}. %Solid green lines represent results computed using FC2 values from \textsc{Phonopy} (FDM), while dashed red lines correspond to results from our GPFC2 predictions. Solid, dashdot, dashed blue lines depect phonon results from \textsc{HiPhive} FC2 of $2\times2\times2$, $3\times3\times3$, and $4\times4\times4$ supercell structures
     }
 \end{figure*}
 
@@ -843,7 +844,7 @@ In this section, we now examine how variations in the cutoff radius (\texttt{rcu
   \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Figure/Appendix/ACE_transfer/_RDF_rcut.jpg}
 \caption{
     \label{fig:A.14}
-    Radial distribution functions (RDFs) and radial basis functions (RBFs) used in the ACE descriptor construction for the bead and Heavy-atom representation. The first and second panel show the inter-molecular RDFs of bead and Heavy-atom training set. The third and fourth panels display the RBFs with differnt cutoff distances, respectively.
+    Radial distribution functions (RDFs) and radial basis functions (RBFs) used in the ACE descriptor construction for the bead and Heavy-atom representation. %The first and second panel show the inter-molecular RDFs of bead and Heavy-atom training set. The third and fourth panels display the RBFs with differnt cutoff distances, respectively.
 }
 \end{figure*}
 
@@ -882,7 +883,7 @@ Unlike the sensitivity observed in the bead-based model, modifications to the \t
   \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Figure/Appendix/ACE_transfer/_RDF_q.jpg}
 \caption{
     \label{fig:A.16}
-    Radial distribution functions (RDFs) and radial basis functions (RBFs) used in the ACE descriptor construction for the bead and Heavy-atom representation. The first and second panel show the intermolecular RDFs of bead and Heavy-atom training set. The third and fourth panels display the RBFs with differnt q parameters, respectively.
+    Radial distribution functions (RDFs) and radial basis functions (RBFs) used in the ACE descriptor construction for the bead and Heavy-atom representation. %The first and second panel show the intermolecular RDFs of bead and Heavy-atom training set. The third and fourth panels display the RBFs with differnt q parameters, respectively.
 }
 \end{figure*}
 As mentioned in the theory chapter (Section~\ref{sec:2.5.5}), the parameter \texttt{q} specifically controls the shape of the left side of the radial basis functions (RBFs). The RBFs are extended further toward shorter interatomic distances with a smaller value of \texttt{q}, while a larger value contracts the basis functions closer to the equilibrium bond length \texttt{r0}. These behaviours are  illustrated in the third and fourth panels of Figure~\ref{fig:A.16}.
